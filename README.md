@@ -33,8 +33,11 @@ client.fetch(urls[0], function (err, $, res, body) {
 ```
 これにより、一般的にはデフォルトで使うとVM（OS）に与えたIPアドレス1個からしかアクセスしないのですが、複数アドレス経由でやりたければVMを増やすという大富豪作業になるところを、VMは1個だけでVMに複数IPを割り当てて、1個のVMから複数IP経由のスクレイピングが割と簡単にできるようになります。
 
+
 まぁ何が違うのかというとこれだけなんす
-![image](https://github.com/user-attachments/assets/3703ede2-33d1-49fe-be43-617d5f1cb812)
+
+![image](https://github.com/user-attachments/assets/d914821d-7dc5-41f9-8036-bdebbc0c0404)
+
 
 
 ----
