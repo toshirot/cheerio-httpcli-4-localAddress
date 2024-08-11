@@ -37,7 +37,7 @@ client.fetch(urls[0], function (err, $, res, body) {
 
 Node.jsでWEBページのスクレイピングを行う際に必要となる文字コードの変換と、[cheerio](http://npmjs.org/package/cheerio)によってパースしたHTMLをjQueryのように操作できるHTTPクライアントモジュールです。
 
-## 特徴
+## cheerio-httpcli の特徴
 
 1. 取得先WEBページの文字コードを自動で判定してHTMLをUTF-8に変換
 2. UTF-8に変換したHTMLをjQueryのように操作可能
