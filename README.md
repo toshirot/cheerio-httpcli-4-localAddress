@@ -1,4 +1,4 @@
-# cheerio-httpcli - Node.js用WEBスクレイピングモジュール
+# cheerio-httpcli-4-localAddrssr - Node.js用WEBスクレイピングモジュール
 
 [![npm-version](https://img.shields.io/npm/v/cheerio-httpcli.svg)](https://npmjs.org/package/cheerio-httpcli)
 [![npm-download](https://img.shields.io/npm/dm/cheerio-httpcli.svg)](https://npmjs.org/package/cheerio-httpcli)
@@ -7,6 +7,33 @@
 [![node-version](https://img.shields.io/node/v/gh-badges.svg)](https://nodejs.org/)
 [![license](https://img.shields.io/npm/l/cheerio-httpcli.svg)](https://github.com/ktty1220/cheerio-httpcli/blob/master/LICENSE)
 [![david](https://david-dm.org/ktty1220/cheerio-httpcli.svg)](https://david-dm.org/ktty1220/cheerio-httpcli)
+
+## このフォークについて
+
+[cheerio-httpcli](https://github.com/ktty1220/cheerio-httpcli)からのフォークです。
+
+便利な、cheerio-httpcli　を使いながら、HTTPクライアントからのアクセス時に、複数のIPを選んでアクセスするために、
+例えば Node.jsのhttp.get にある localAddress 経由のアクセスのように 
+client.set('localAddress', ip);  で簡単に経由 Address を切り替えられるようにしてみました。
+
+```JavaScript: サンプル
+
+const client = require('cheerio-httpcli');
+
+client.set('localAddress', ip);  // ip にlocalAddressを指定する
+client.fetch(urls[0], function (err, $, res, body) {
+    
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(body);
+});
+```
+これにより、一般的にはデフォルトで使うとVM（OS）に与えたIPアドレス1個からしかアクセスしないのですが、複数アドレス経由でやりたければVMを増やすという大富豪作業になるところを、VMは1個だけでVMに複数IPを割り当てて、1個のVMから複数IP経由のスクレイピングが割と簡単にできるようになります。
+
+
+----
 
 Node.jsでWEBページのスクレイピングを行う際に必要となる文字コードの変換と、[cheerio](http://npmjs.org/package/cheerio)によってパースしたHTMLをjQueryのように操作できるHTTPクライアントモジュールです。
 
